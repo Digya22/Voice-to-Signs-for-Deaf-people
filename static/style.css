@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    /* border: 1px solid red; */
+}
+:root{
+    --primary_text_color :white;
+    --primary_color:black;
+    --primary_font_family: "Nunito", sans-serif;
+}
+
+.background{
+    position: relative;
+    .cir{
+        width: 40vw;
+        height: 30vh;
+        background-image: linear-gradient(to right top, #b5c7e2, #88acea, #5e8fee, #3671ef, #124feb);
+        position: absolute;
+        overflow: hidden;
+        transform: translate3d(70%,230%,0);
+        border-radius: 50%;
+        /* z-index: -1; */
+        filter: blur(150px);
+    }
+    #letter1{
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+    }
+}
+.header{
+    color: var(--primary_text_color);
+    width: 100vw;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    h1{
+        font-size: 4rem;
+        font-family: var(--primary_font_family);
+        font-weight: 900;
+    }
+}
+#infoDiv{
+    width: 100vw;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2rem;
+    h3{
+        color: var(--primary_text_color);
+        font-family: var(--primary_font_family);
+    }
+}
+.container{
+    background-color: var(--primary_color);
+    width: 100vw;
+    height: 100vh;
+}
+.info{
+    color: var(--primary_text_color);
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 60vh;
+
+    #handSvg{
+        width: 10vw;
+    }
+}
+#btnDiv{
+
+/* width: 100%; */
+left: -1%;
+position: relative;
+margin-top: -10rem;
+
+#btn{
+    border: 1px solid white;
+    width:7rem;
+    font-size:larger;
+    background-color: transparent;
+    color: var(--primary_text_color);
+    height:3rem;
+    border-radius: .8rem;
+    font-family: var(--primary_font_family);
+}
+}

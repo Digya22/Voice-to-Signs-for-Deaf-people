@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Video Player</title>
+</head>
+
+<body>
+	<h1>Video Player</h1>
+
+	<form id="videoForm" action="/get_video" method="POST">
+		<label for="text">Enter Text:</label>
+		<input type="text" id="text" name="text" />
+		<button type="submit">Submit</button>
+	</form>
+
+	<div id="videoContainer">
+		<!-- Video will be embedded here -->
+	</div>
+
+	<script>
+		document
+			.getElementById("videoForm")
+			.addEventListener("submit", function (event) {
+				event.preventDefault();
+				fetch("/get_video", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						text: document.getElementById("text").value,
+					}),
+				})
+					.then((response) => {
+						if (!response.ok) {
+							throw new Error("Network response was not ok");
+						}
+						return response.blob();
+					})
+					.then((blob) => {
+						const videoUrl = URL.createObjectURL(blob);
+						const videoElement = document.createElement("video");
+						videoElement.src = videoUrl;
+						videoElement.controls = true;
+						videoElement.autoplay = true;
+						list = document.getElementById("videoContainer");
+						if (list.firstElementChild)
+							list.removeChild(list.firstElementChild);
+						list.appendChild(videoElement);
+					})
+					.catch((error) => {
+						console.error("Error:", error);
+					});
+			});
+	</script>
+</body>
+
+</html>
