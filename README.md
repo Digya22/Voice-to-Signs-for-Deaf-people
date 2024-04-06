@@ -24,7 +24,10 @@ This project aims to provide a solution for converting voice messages into sign 
 `pip install -r requirements.txt`
 
 4. Run the application:
-`python app.py`
+- Start the API backend
+  `uvicorn main:app --reload`
+- Start the flask engine
+  `python run fl.py`
 
 ## Usage
 1. Open the application in your web browser.
