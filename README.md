@@ -52,3 +52,6 @@ This project aims to provide a solution for converting voice messages into sign 
 
 ## Acknowledgements
 - kaggle dataset `https://www.kaggle.com/datasets/risangbaskoro/wlasl-processed`
+
+## LICENSE
+[MIT LICENSE](https://github.com/Digya22/Voice-to-Signs-for-Deaf-people/blob/main/LICENSE)
