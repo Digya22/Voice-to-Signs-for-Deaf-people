@@ -16,7 +16,6 @@ This project aims to provide a solution for converting voice messages into sign 
 `https://github.com/Digya22/Voice-to-Signs-for-Deaf-people.git`
 
 
-
 2. Navigate to the project directory:
 `cd voice-to-sign-language`
 
@@ -33,6 +32,10 @@ This project aims to provide a solution for converting voice messages into sign 
 1. Open the application in your web browser.
 2. Record  a voice message.
 3. Click "Start" to generate the corresponding sign language animation.
+
+## Demo
+[screen-capture.webm](https://github.com/Digya22/Voice-to-Signs-for-Deaf-people/assets/104648854/fcec8525-58fc-4f74-a842-cf0336d867e8)
+
 
 ## Technologies Used
 - FastAPI
