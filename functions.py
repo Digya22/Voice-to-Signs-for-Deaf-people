@@ -5,7 +5,13 @@ from moviepy.editor import VideoFileClip, concatenate_videoclips
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
-with open("./data1.json", "r") as file:
+from os import path
+
+videos = path.join("videos")
+final = path.join("final.mp4")
+data = path.join("data1.json")
+
+with open(data, "r") as file:
     predefined_tokens = json.load(file)
 
 
@@ -33,17 +39,17 @@ def english_to_tokens(text, predefined_tokens=predefined_tokens):
 
 def get_video_path(tokens):
     if not isinstance(tokens, list):
-        return f"videos/{tokens}.mp4"
-    return [f"videos/{token}.mp4" for token in tokens]
+        return path.join(videos, str(tokens[0])+".mp4")
+    return [path.join(videos, str(token)+".mp4")for token in tokens]
 
 
 def stream_video(paths):
     path: str
     if not isinstance(paths, list):
-        path = paths
+        path = paths[0]
     else:
         concatenate_videos(paths)
-        path = "./final.mp4"
+        path = final
     try:
 
         def iterfile():
@@ -59,4 +65,4 @@ def concatenate_videos(paths):
     clips = [VideoFileClip(path) for path in paths]
 
     final_clip = concatenate_videoclips(clips, method="compose")
-    final_clip.write_videofile("final.mp4")
+    final_clip.write_videofile(final)
